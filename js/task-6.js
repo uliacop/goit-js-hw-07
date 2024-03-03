@@ -25,9 +25,7 @@ destroyBtn.addEventListener('click', () => {
 });
 
 function removeAllBoxes() {
-  while (boxDiv.firstChild) {
-    boxDiv.removeChild(boxDiv.firstChild);
-  }
+  boxDiv.innerHTML = '';
 }
 
 function createBoxes(amount) {
@@ -35,9 +33,9 @@ function createBoxes(amount) {
   for (let i = 0; i < amount; i++) {
     const box = document.createElement('div');
     box.style.backgroundColor = getRandomHexColor();
-    size += 10;
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
+    size += 10;
     boxDiv.appendChild(box);
   }
 }
